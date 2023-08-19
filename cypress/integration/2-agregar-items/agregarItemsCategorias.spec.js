@@ -10,7 +10,7 @@ describe('Agregar un Ítem de Cada Categoría', () => {
       cy.contains('Nokia lumia 1520').click()
       cy.wait(1000);
       cy.contains('Add to cart').click()
-      cy.wait(4000);
+      cy.wait(1000);
 
       cy.on('window:alert', (textoAlerta) => {
         expect(textoAlerta).to.equal('Product added');
