@@ -7,23 +7,23 @@ describe('Agregar varias categorías', () => {
       cy.get('#cat').contains('CATEGORIES')
       cy.contains('#itemc','Phones').click()
       cy.wait(1000);
-      cy.get('#tbodyid')
-      cy.contains('Samsung galaxy s6')
+      cy.get('#tbodyid').should('be.visible')
+      cy.get('#tbodyid > div:nth-child(1) > div > div > h4 > a').should('have.text', 'Samsung galaxy s6')
     })
-
+    
     it('Click en la categoría Laptops', () => {
       cy.get('#cat').contains('CATEGORIES')
       cy.contains('#itemc','Laptops').click()
       cy.wait(1000);
-      cy.get('#tbodyid')
-      cy.contains('Sony vaio i5')
+      cy.get('#tbodyid').should('be.visible')
+      cy.get('#tbodyid > div:nth-child(1) > div > div > h4 > a').should('have.text', 'Sony vaio i5')
     })
-
+    
     it('Click en la categoría Monitors', () => {
       cy.get('#cat').contains('CATEGORIES')
       cy.contains('#itemc','Monitors').click()
       cy.wait(1000);
-      cy.get('#tbodyid')
-      cy.contains('Apple monitor 24')
+      cy.get('#tbodyid').should('be.visible')
+      cy.get('#tbodyid > div:nth-child(1) > div > div > h4 > a').should('have.text', 'Apple monitor 24')
     })
 })
