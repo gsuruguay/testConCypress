@@ -37,6 +37,6 @@ describe('Flujo de Checkout con Visualización de Número de Tarjeta', () => {
       cy.get('input#month').type('06');
       cy.get('input#year').type('28');
       cy.contains('button.btn.btn-primary', 'Purchase').click();
-      cy.get('p.lead.text-muted').contains(numeroTarjeta);
+      cy.get('body > div.sweet-alert.showSweetAlert.visible > p').should('contain.text', '123456789')
     })
 })
