@@ -6,11 +6,8 @@ describe('Carrito de Compras - Actualización Correcta', () => {
     it('Se agrega un Ítem de Phones y se elimina', () => {
       cy.get('#cat').contains('CATEGORIES')
       cy.contains('#itemc','Phones').click()
-      cy.wait(1000);
       cy.contains('Nokia lumia 1520').click()
-      cy.wait(1000);
       cy.contains('Add to cart').click()
-      cy.wait(1000);
 
       cy.on('window:alert', (textoAlerta) => {
         expect(textoAlerta).to.equal('Product added');

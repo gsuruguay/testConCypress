@@ -8,11 +8,8 @@ describe('Flujo de Checkout con Visualización de Número de Tarjeta', () => {
     it('Se realiza la compra de una Laptop', () => {
       cy.get('#cat').contains('CATEGORIES')
       cy.contains('#itemc','Laptops').click()
-      cy.wait(1000);
       cy.contains('MacBook air').click()
-      cy.wait(1000);
       cy.contains('Add to cart').click()
-      cy.wait(1000);
 
       cy.on('window:alert', (textoAlerta) => {
         expect(textoAlerta).to.equal('Product added');
@@ -37,6 +34,6 @@ describe('Flujo de Checkout con Visualización de Número de Tarjeta', () => {
       cy.get('input#month').type('06');
       cy.get('input#year').type('28');
       cy.contains('button.btn.btn-primary', 'Purchase').click();
-      cy.get('body > div.sweet-alert.showSweetAlert.visible > p').should('contain.text', '123456789')
+      cy.get('body > div.sweet-alert.showSweetAlert.visible > p').should('contain', '123456789')
     })
 })
